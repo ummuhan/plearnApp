@@ -2,8 +2,9 @@ import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
+
 //Arka planda hangi veritabanı kullanılacağı umrumuzda değil verileri user tipinde alacağımızı belirttik.
-class User{
+class User {
   final String userID;
   String email;
   String userName;
@@ -14,6 +15,7 @@ class User{
 
   User({@required this.userID, @required this.email, String userId});
   Map<String, dynamic> toMap() {
+    //Burda patlıyor
     return {
       'userID': userID,
       'email': email,
@@ -21,11 +23,11 @@ class User{
           userName ?? email.substring(0, email.indexOf('@')) + randomSayiUret(),
       'profilURL': profilURL ??
           'https://nextgrowthconclave.com/wp-content/uploads/2019/12/no-face.gif',
-      
       'seviye': seviye ?? 1,
     };
   }
-User.fromMap(Map<String, dynamic> map)
+
+  User.fromMap(Map<String, dynamic> map)
       : userID = map['userID'],
         email = map['email'],
         userName = map['userName'],

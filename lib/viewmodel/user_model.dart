@@ -2,119 +2,117 @@
 //Bunun için modelleri tanımlamalıyız.
 //Gelen veriye göre arayüzümüzü güncellemek isrediğimiz durumlarda kullanırız
 
-
 import 'package:englishapp/locator.dart';
 import 'package:englishapp/model/user_model.dart';
 import 'package:englishapp/repository/user_repository.dart';
 import 'package:englishapp/services/auth_base.dart';
 import 'package:flutter/cupertino.dart';
-enum ViewState {Idle,Busy}//Boşta veya meşgul olabilir.
 
-class UserModel with ChangeNotifier implements AuthBase{
+enum ViewState { Idle, Busy } //Boşta veya meşgul olabilir.
 
-  ViewState _state=ViewState.Idle;
-  var _repository=locator<UserRepository>();
+class UserModel with ChangeNotifier implements AuthBase {
+  ViewState _state = ViewState.Idle;
+  var _repository = locator<UserRepository>();
   User _user;
-  User get user=>_user;//Userı projede herhangi bir yerde çağırabilmek için getter tanımlamamız gerekir.
-  ViewState get state=>_state;
+  User get user =>
+      _user; //Userı projede herhangi bir yerde çağırabilmek için getter tanımlamamız gerekir.
+  ViewState get state => _state;
   String emailHataMesaji;
   String sifreHataMesaji;
-  
-  set state(ViewState value){
-    _state=value;
-    notifyListeners();//Değişimde arayüze bilgi vermeyi sağlar.
+
+  set state(ViewState value) {
+    _state = value;
+    notifyListeners(); //Değişimde arayüze bilgi vermeyi sağlar.
   }
 
-  UserModel(){
+  UserModel() {
     currentUser();
   }
 
   @override
   Future<User> currentUser() async {
     try {
-      state=ViewState.Busy;
-      _user=await _repository.currentUser();
+      state = ViewState.Busy;
+      _user = await _repository.currentUser();
       return _user;
     } catch (e) {
       return null;
-    }finally{
-      state=ViewState.Idle;
+    } finally {
+      state = ViewState.Idle;
     }
   }
 
   @override
   Future<User> signInAnonymously() async {
-   try {
-      state=ViewState.Busy;
-      _user= await _repository.signInAnonymously();
+    try {
+      state = ViewState.Busy;
+      _user = await _repository.signInAnonymously();
       return _user;
     } catch (e) {
-      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
+      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata" + e);
       return null;
-    }finally{
-      state=ViewState.Idle;
+    } finally {
+      state = ViewState.Idle;
     }
   }
-
 
   @override
   Future<bool> signOut() async {
-      try {
-      state=ViewState.Busy;
-      bool sonuc=await _repository.signOut();
-      _user=null;      
+    try {
+      state = ViewState.Busy;
+      bool sonuc = await _repository.signOut();
+      _user = null;
       return sonuc;
     } catch (e) {
-      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
+      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata" + e);
       return false;
-    }finally{
-      state=ViewState.Idle;
+    } finally {
+      state = ViewState.Idle;
     }
   }
 
   @override
-  Future<User> signInwithGoogle() async{
+  Future<User> signInwithGoogle() async {
     try {
-      state=ViewState.Busy;
-      _user= await _repository.signInwithGoogle();
+      state = ViewState.Busy;
+      _user = await _repository.signInwithGoogle();
       return _user;
     } catch (e) {
-     // debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
+      // debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
       return null;
-    }finally{
-      state=ViewState.Idle;
+    } finally {
+      state = ViewState.Idle;
     }
   }
 
-
   @override
-  Future<User> signInFacebook() async{
-  try {
-      state=ViewState.Busy;
-      _user= await _repository.signInFacebook();
+  Future<User> signInFacebook() async {
+    try {
+      state = ViewState.Busy;
+      _user = await _repository.signInFacebook();
       return _user;
     } catch (e) {
-      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
+      debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata" + e);
       return null;
-    }finally{
-      state=ViewState.Idle;
+    } finally {
+      state = ViewState.Idle;
     }
-
-}
+  }
 
   @override
-  Future<User> createUserWithEmailandPassword(String email, String sifre) async {
+  Future<User> createUserWithEmailandPassword(
+      String email, String sifre) async {
     if (_emailSifreKontrol(email, sifre)) {
       try {
         state = ViewState.Busy;
-        _user =
+        _user = //Patlıyor
             await _repository.createUserWithEmailandPassword(email, sifre);
 
         return _user;
       } finally {
         state = ViewState.Idle;
       }
-} else
+    } else
       return null;
   }
 
@@ -154,8 +152,5 @@ class UserModel with ChangeNotifier implements AuthBase{
     } finally {
       state = ViewState.Idle;
     }
-    
   }
-  }
-
-  
+}
