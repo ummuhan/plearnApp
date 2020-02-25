@@ -43,7 +43,7 @@ class _EmailveSifreLoginPageState extends State<EmailveSifreLoginPage> {
       }
     } else {
       try {
-        User _olusturulanUser =
+        User _olusturulanUser = //patlıyor
             await _userModel.createUserWithEmailandPassword(_email, _sifre);
         if (_olusturulanUser != null)
           print("Oturum açan user id:" + _olusturulanUser.userID.toString());
