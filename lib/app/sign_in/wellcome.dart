@@ -168,17 +168,16 @@ class wellcomePage extends StatelessWidget {
                         // MyIslem().splitBomba(); // ikiymiş:D
                         try {
                           print("Işlem Başladı");
-                          /* await Firestore.instance
-                              .collection("EnglishApp")
-                              .document("Sozluk")
-                              .setData({"Level": 1});*/
-
                           await Firestore.instance
+                              .collection("EnglishApp")
+                              .document("Sozluk1")
+
+                              /* await Firestore.instance
                               .collection("EnglishApp")
                               .document("Sozluk")
                               // .collection("Kelimeler")
-                              // .document("data")
-                              .updateData(MyIslem().yuzkelime);
+                              // .document("data")*/
+                              .updateData(MyIslem().kalip);
                           print("Başarılı");
                         } catch (e) {
                           print("Hata:" + e.toString());

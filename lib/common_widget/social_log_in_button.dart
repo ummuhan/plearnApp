@@ -12,10 +12,10 @@ class SocialLoginButton extends StatelessWidget {
   const SocialLoginButton(
       {Key key,
       @required this.butonText,
-      this.butonColor: Colors.purple,
+      this.butonColor: Colors.orange,
       this.textColor: Colors.white,
       this.radius: 16,
-      this.yukseklik: 40,
+      this.yukseklik: 50,
       this.butonIcon,
       @required this.onPressed})
       : assert(butonText != null, onPressed != null),
