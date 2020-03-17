@@ -32,16 +32,22 @@ dependencies:
   get_it: ^3.1.0
   provider: ^4.0.4
   cloud_firestore: ^0.13.2+3
+  random_string: ^2.0.1
+  cupertino_icons: ^0.1.2
+  rflutter_alert: ^1.0.3
+  material_design_icons_flutter: ^3.2.4495
 
   flutter:
     sdk: flutter
-  
+  http: ^0.12.0 
+  frideos: ^0.6.0
+  font_awesome_flutter: ^8.4.0
 
 
   
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.2
+
   
   
  
@@ -58,10 +64,25 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   fonts:
-    - family: Elyazisi
+    - family: Quando
       fonts:
-        - asset: assets/fonts/Caveat-Regular.ttf
+        - asset: fonts/Quando.ttf
+    - family: Satisfy
+      fonts:
+        - asset: fonts/Satisfy.ttf
+        - asset: fonts/Alike-Regular.ttf
+    - family: AmaticSC
+      fonts:
+        - asset: fonts/AmaticSC-Regular.ttf
+        - asset: fonts/AmaticSC-Bold.ttf
+    - family: FiraMono
+      fonts:
+        - asset: fonts/FiraMono-Bold.ttf
+        - asset: fonts/FiraMono-Regular.ttf
+    
 
+        
+       
 
 
   # The following line ensures that the Material Icons font is
@@ -72,6 +93,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - images/
+   - assets/
+   - res/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

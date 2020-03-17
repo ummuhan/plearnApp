@@ -1,7 +1,7 @@
-import 'package:englishapp/common_widget/platform_duyarl%C4%B1_alert_dialog.dart';
-import 'package:englishapp/common_widget/social_log_in_button.dart';
 import 'package:englishapp/model/user_model.dart';
 import 'package:englishapp/viewmodel/user_model.dart';
+import 'package:englishapp/widgets/common_widget/platform_duyarl%C4%B1_alert_dialog.dart';
+import 'package:englishapp/widgets/common_widget/social_log_in_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

@@ -1,5 +1,5 @@
 import 'package:englishapp/model/user_model.dart';
-import 'package:englishapp/screens/game.dart/splash.dart';
+import 'package:englishapp/screens/game/splash.dart';
 import 'package:englishapp/screens/yanMenu.dart';
 import 'package:englishapp/viewmodel/user_model.dart';
 import 'package:flutter/material.dart';
@@ -54,7 +54,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.teal.shade200,
@@ -77,10 +77,6 @@ class homePage extends StatelessWidget {
                       "A1 (Beginner)",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
-                    subtitle: Text(
-                      "To begin, begin.",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
                   ),
                 ),
               ),
@@ -95,7 +91,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.pink.shade200,
@@ -114,10 +110,6 @@ class homePage extends StatelessWidget {
                       "A2 (Elementary)",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
-                    subtitle: Text(
-                      "If you can dream it, you can do it.",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
                   ),
                 ),
               ),
@@ -132,7 +124,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.orange,
@@ -152,10 +144,6 @@ class homePage extends StatelessWidget {
                       "B1 (Pre-Intermediate)",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
-                    subtitle: Text(
-                      "Only I can change my life. No one can do it for me.",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
                   ),
                 ),
               ),
@@ -170,7 +158,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.yellow.shade300,
@@ -190,10 +178,6 @@ class homePage extends StatelessWidget {
                       "B2 (Intermediate)",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
-                    subtitle: Text(
-                      "Deserve your dream.",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
                   ),
                 ),
               ),
@@ -208,7 +192,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.green.shade400,
@@ -228,10 +212,6 @@ class homePage extends StatelessWidget {
                       "C1 (Upper-Intermediate)",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
-                    subtitle: Text(
-                      "If you don’t like something, change it.",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
                   ),
                 ),
               ),
@@ -246,7 +226,7 @@ class homePage extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 400,
-                height: 150,
+                height: 100,
                 child: Card(
                   elevation: 40,
                   color: Colors.blue.shade300,
@@ -264,10 +244,6 @@ class homePage extends StatelessWidget {
                     ),
                     title: Text(
                       "C2 (Advanced)",
-                      style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
-                    ),
-                    subtitle: Text(
-                      "You must be the change you wish to see in the world.",
                       style: TextStyle(fontFamily: 'Elyazisi', fontSize: 30),
                     ),
                   ),

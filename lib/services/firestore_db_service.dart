@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:englishapp/model/user_model.dart';
 import 'database_base.dart';
 
-
 class FirestoreDBService implements DBBase {
   final Firestore _firebaseDB = Firestore.instance;
 
@@ -59,7 +58,6 @@ class FirestoreDBService implements DBBase {
     return true;
   }
 
- 
 /*
   @override
   Future<List<Konusma>> getAllConversations(String userID) async {
@@ -200,6 +198,12 @@ class FirestoreDBService implements DBBase {
     }
 
     return _tumKullanicilar;
+  }
+
+  @override
+  Future<List> getkelime() {
+    // TODO: implement getkelime
+    return null;
   }
 /*
   Future<List<Mesaj>> getMessagewithPagination(

@@ -1,8 +1,13 @@
+import 'package:englishapp/app/homePage.dart';
 import 'package:englishapp/locator.dart';
+import 'package:englishapp/screens/game/hangman.dart/screens/game_screen.dart';
+import 'package:englishapp/screens/game/hangman.dart/screens/home_screen.dart';
+import 'package:englishapp/screens/game/hangman.dart/utilities.dart/constants.dart';
+import 'package:englishapp/screens/game/quizpage.dart';
 import 'package:englishapp/viewmodel/user_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
 import 'app/landing_page.dart';
 
 void main() {
@@ -13,17 +18,53 @@ void main() {
 
 class MyApps extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  /* Widget build(BuildContext context) {
     // bak mesela bunu ekliyorum
     return ChangeNotifierProvider(
       child: MaterialApp(
           title: 'Plearn',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.purple,
+            primarySwatch: Colors.orange,
           ),
-          home: landingPage()),
+          home: HomeScreen()),
       create: (BuildContext context) => UserModel(),
+    );
+  }*/
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+    /*return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: quizpage(mydata: null),
+    );*/
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        tooltipTheme: TooltipThemeData(
+          decoration: BoxDecoration(
+            color: kTooltipColor,
+            borderRadius: BorderRadius.circular(5.0),
+          ),
+          textStyle: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 20.0,
+            letterSpacing: 1.0,
+            color: Colors.white,
+          ),
+        ),
+        scaffoldBackgroundColor: Color(0xFF4225A0),
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'AmaticSC'),
+      ),
+      initialRoute: 'HomeScreen',
+      routes: {
+        'HomeScreen': (context) => HomeScreen(),
+      },
     );
   }
 }

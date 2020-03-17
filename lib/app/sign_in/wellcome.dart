@@ -164,13 +164,13 @@ class wellcomePage extends StatelessWidget {
                     ),
                     RaisedButton(
                       color: Colors.orange,
-                      /* onPressed: () async {
+                      onPressed: () async {
                         // MyIslem().splitBomba(); // ikiymiş:D
                         try {
                           print("Işlem Başladı");
                           await Firestore.instance
                               .collection("EnglishApp")
-                              .document("Sozluk1")
+                              .document("1")
 
                               /* await Firestore.instance
                               .collection("EnglishApp")
@@ -182,9 +182,9 @@ class wellcomePage extends StatelessWidget {
                         } catch (e) {
                           print("Hata:" + e.toString());
                         }
-                      },*/
-                      onPressed: () => _visitorLogin(
-                          context), //Bizden bir context beklediği için k-context tanımlamamız gerekiyor.
+                      },
+                      /*  onPressed: () => _visitorLogin(
+                          context), */ //Bizden bir context beklediği için k-context tanımlamamız gerekiyor.
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
                           Radius.circular(16),

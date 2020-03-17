@@ -1,4 +1,3 @@
-
 import 'package:englishapp/model/user_model.dart';
 
 abstract class DBBase {
