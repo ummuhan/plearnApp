@@ -1,14 +1,14 @@
-import 'package:englishapp/app/homePage.dart';
+import 'package:englishapp/ui/homepage.dart';
 import 'package:flutter/material.dart';
 
-class resultpage extends StatefulWidget {
+class ResultPage extends StatefulWidget {
   int marks;
-  resultpage({Key key, @required this.marks}) : super(key: key);
+  ResultPage({Key key, @required this.marks}) : super(key: key);
   @override
-  _resultpageState createState() => _resultpageState(marks);
+  _ResultPageState createState() => _ResultPageState(marks);
 }
 
-class _resultpageState extends State<resultpage> {
+class _ResultPageState extends State<ResultPage> {
   List<String> images = [
     "images/success.png",
     "images/good.png",
@@ -34,7 +34,7 @@ class _resultpageState extends State<resultpage> {
   }
 
   int marks;
-  _resultpageState(this.marks);
+  _ResultPageState(this.marks);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +92,7 @@ class _resultpageState extends State<resultpage> {
                 OutlineButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => homePage(user: null),
+                      builder: (context) => HomePage(user: null),
                     ));
                   },
                   child: Text(

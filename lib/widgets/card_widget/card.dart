@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class card_widget extends StatelessWidget {
+class CardWidget extends StatelessWidget {
   final String cardText;
   final Color cardColor;
   final Color textColor;
@@ -10,7 +10,7 @@ class card_widget extends StatelessWidget {
   final Widget butonIcon;
   final VoidCallback onPressed;
 
-  const card_widget(
+  const CardWidget(
       {Key key,
       this.cardText,
       this.cardColor: Colors.purple,

@@ -4,11 +4,11 @@ import 'package:englishapp/screens/game/resultpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class getjson extends StatelessWidget {
+class Getjson extends StatelessWidget {
   // accept the langname as a parameter
 
   String langname;
-  getjson(this.langname);
+  Getjson(this.langname);
   String assettoload;
 
   // a function
@@ -48,22 +48,22 @@ class getjson extends StatelessWidget {
             ),
           );
         } else {
-          return quizpage(mydata: mydata);
+          return QuizPage(mydata: mydata);
         }
       },
     );
   }
 }
 
-class quizpage extends StatefulWidget {
+class QuizPage extends StatefulWidget {
   var mydata;
 
-  quizpage({Key key, @required this.mydata}) : super(key: key);
+  QuizPage({Key key, @required this.mydata}) : super(key: key);
   @override
-  _quizpageState createState() => _quizpageState(); //içi null olacak
+  _QuizPageState createState() => _QuizPageState(); //içi null olacak
 }
 
-class _quizpageState extends State<quizpage> {
+class _QuizPageState extends State<QuizPage> {
   Color colortoshow = Colors.indigoAccent;
   Color right = Colors.green;
   Color wrong = Colors.red;
@@ -89,22 +89,22 @@ class _quizpageState extends State<quizpage> {
 
   // import 'dart:math';
 
-  //   var random_array;
+  //   var randomArray;
   //   var distinctIds = [];
   //   var rand = new Random();
   //     for (int i = 0; ;) {
   //     distinctIds.add(rand.nextInt(10));
-  //       random_array = distinctIds.toSet().toList();
-  //       if(random_array.length < 10){
+  //       randomArray = distinctIds.toSet().toList();
+  //       if(randomArray.length < 10){
   //         continue;
   //       }else{
   //         break;
   //       }
   //     }
-  //   print(random_array);
+  //   print(randomArray);
 
   // ----- END OF CODE
-  var random_array = [1, 6, 7, 2, 4, 10, 8, 3, 9, 5];
+  var randomArray = [1, 6, 7, 2, 4, 10, 8, 3, 9, 5];
 
   // overriding the initstate function to start timer as this screen is created
   @override
@@ -143,11 +143,11 @@ class _quizpageState extends State<quizpage> {
     timer = 30;
     setState(() {
       if (j < 10) {
-        i = random_array[j];
+        i = randomArray[j];
         j++;
       } else {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => resultpage(marks: marks),
+          builder: (context) => ResultPage(marks: marks),
         ));
       }
       btncolor["a"] = Colors.indigoAccent;

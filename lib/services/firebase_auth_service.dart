@@ -8,7 +8,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirebaseAuthService implements AuthBase {
   //Abstract class tanımlandığı için metodları implement etmemiz gerekmektedir.
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
   @override
   Future<User> currentUser() async {
     try {
@@ -27,9 +26,9 @@ class FirebaseAuthService implements AuthBase {
       return null; //Eğer öyle bir kullanıcı yoksa null döndür.
     } else {
       return User(
-          userId: user.uid,
-          userID: null,
-          email: null); //Kullanıcı varsa userId döndür.
+          userID: user.uid,
+          email: user.email,
+          userName: user.displayName); //Kullanıcı varsa userId döndür.
     }
   }
 

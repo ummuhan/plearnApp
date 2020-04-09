@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class register extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _registerState createState() => _registerState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _registerState extends State<register>
+class _RegisterState extends State<Register>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
@@ -23,8 +23,6 @@ class _registerState extends State<register>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Container();
   }
 }

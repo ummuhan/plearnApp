@@ -1,6 +1,4 @@
 import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 
 //Arka planda hangi veritabanı kullanılacağı umrumuzda değil verileri user tipinde alacağımızı belirttik.
@@ -13,7 +11,11 @@ class User {
   DateTime updatedAt;
   int seviye;
 
-  User({@required this.userID, @required this.email, String userId});
+  User(
+      {@required this.userID,
+      @required this.email,
+      this.userName,
+      this.profilURL});
   Map<String, dynamic> toMap() {
     //Burda patlıyor
     return {
@@ -32,8 +34,8 @@ class User {
         email = map['email'],
         userName = map['userName'],
         profilURL = map['profilURL'],
-        createdAt = (map['createdAt'] as Timestamp).toDate(),
-        updatedAt = (map['updatedAt'] as Timestamp).toDate(),
+        // createdAt = (map['createdAt'] as Timestamp).toDate(), // Hatalı
+        // updatedAt = (map['updatedAt'] as Timestamp).toDate(), // Hatalı
         seviye = map['seviye'];
 
   User.idveResim({@required this.userID, @required this.profilURL});

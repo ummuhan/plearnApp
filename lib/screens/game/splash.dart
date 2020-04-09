@@ -2,18 +2,18 @@ import 'dart:async';
 import 'package:englishapp/screens/game/quizpage.dart';
 import 'package:flutter/material.dart';
 
-class splashscreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   @override
-  _splashscreenState createState() => _splashscreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _splashscreenState extends State<splashscreen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => quizpage(mydata: null), //-----------------önemli
+        builder: (context) => QuizPage(mydata: null), //-----------------önemli
       ));
     });
   }

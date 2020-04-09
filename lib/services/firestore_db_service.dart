@@ -200,9 +200,7 @@ class FirestoreDBService implements DBBase {
     return _tumKullanicilar;
   }
 
-  @override
   Future<List> getkelime() {
-    // TODO: implement getkelime
     return null;
   }
 /*

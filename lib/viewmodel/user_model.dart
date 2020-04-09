@@ -78,7 +78,7 @@ class UserModel with ChangeNotifier implements AuthBase {
       _user = await _repository.signInwithGoogle();
       return _user;
     } catch (e) {
-      // debugPrint("Viewmodeldeki usermodeldeki signınAnonymously da hata"+e);
+      debugPrint("Viewmodeldeki usermodeldeki signınGoogle da hata");
       return null;
     } finally {
       state = ViewState.Idle;

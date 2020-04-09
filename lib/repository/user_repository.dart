@@ -27,11 +27,11 @@ class UserRepository implements AuthBase {
     if (appMode == AppMode.DEBUG) {
       return await _authenticationService.currentUser();
     } else {
-      /*User _user = await _firebaseAuthService.currentUser();
+      User _user = await _firebaseAuthService.currentUser();
       if (_user != null)
         return await _firestoreDBService.readUser(_user.userID);
       else
-        return null;*/
+        return null;
     }
   }
 
@@ -56,7 +56,6 @@ class UserRepository implements AuthBase {
   @override
   Future<User> signInwithGoogle() async {
     if (appMode == AppMode.DEBUG) {
-      // return await _authenticationService.signInwithGoogle();
       return await _authenticationService.signInwithGoogle();
     } else {
       User _user = await _firebaseAuthService.signInwithGoogle();
@@ -76,22 +75,9 @@ class UserRepository implements AuthBase {
   @override
   Future<User> signInFacebook() async {
     if (appMode == AppMode.DEBUG) {
-      // return await _authenticationService.signInwithGoogle();
       return await _authenticationService.signInFacebook();
     } else {
       return await _firebaseAuthService.signInFacebook();
-
-      User _user = await _firebaseAuthService.signInFacebook();
-      if (_user != null) {
-        bool _sonuc = await _firestoreDBService.saveUser(_user);
-        if (_sonuc) {
-          return await _firestoreDBService.readUser(_user.userID);
-        } else {
-          await _firebaseAuthService.signOut();
-          return null;
-        }
-      } else
-        return null;
     }
   }
 
