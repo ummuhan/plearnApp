@@ -8,7 +8,8 @@ import 'package:provider/provider.dart';
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _userModel = Provider.of<UserModel>(context);
+    final _userModel = Provider.of<UserModel>(
+        context); //Kullanıcı var mı yok mu kotrol etmek için kullanıcı durumunu tutarız.
 
     if (_userModel.state == ViewState.Idle) {
       if (_userModel.user == null) {
@@ -18,8 +19,9 @@ class LandingPage extends StatelessWidget {
       }
     } else {
       return Scaffold(
-        body: Center(),
-      );
+          body: Center(
+        child: CircularProgressIndicator(backgroundColor: Colors.pink,),
+      ));
     }
   }
 }

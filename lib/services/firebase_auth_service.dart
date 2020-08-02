@@ -1,4 +1,4 @@
-import 'package:englishapp/model/user_model.dart';
+import 'package:englishapp/model/user.dart';
 import 'package:englishapp/services/auth_base.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -28,7 +28,7 @@ class FirebaseAuthService implements AuthBase {
       return User(
           userID: user.uid,
           email: user.email,
-          userName: user.displayName); //Kullanıcı varsa userId döndür.
+         ); //Kullanıcı varsa userId döndür.
     }
   }
 
@@ -63,8 +63,7 @@ class FirebaseAuthService implements AuthBase {
   @override
   Future<User> signInwithGoogle() async {
     GoogleSignIn _googleSignIn = GoogleSignIn();
-    GoogleSignInAccount _googleUser = await _googleSignIn
-        .signIn(); //Ekrana google giriş kısmının gelmesini sağladık
+    GoogleSignInAccount _googleUser = await _googleSignIn.signIn(); //Ekrana google giriş kısmının gelmesini sağladık
     if (_googleUser != null) {
       //Doğru giriş ile kullanıcının giriş yapmasını sağladık ve verilerini aldık.
       GoogleSignInAuthentication _googleAuth =
@@ -124,21 +123,21 @@ class FirebaseAuthService implements AuthBase {
   @override
   Future<User> createUserWithEmailandPassword(
       String email, String sifre) async {
-    AuthResult sonuc = await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email, password: sifre);
-    return _userfromFirebase(sonuc.user);
+
+      AuthResult sonuc = await _firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: sifre);
+      return _userfromFirebase(sonuc.user);
   }
 
   @override
   Future<User> signInWithEmailandPassword(String email, String sifre) async {
-    AuthResult sonuc = await _firebaseAuth.signInWithEmailAndPassword(
-        email: email, password: sifre);
-    return _userfromFirebase(sonuc.user);
+      AuthResult sonuc = await _firebaseAuth.signInWithEmailAndPassword(
+          email: email, password: sifre);
+      return _userfromFirebase(sonuc.user);
+   
+   
+   
   }
 
-  readUser(String userID) {}
-
-  updateUserName(String userID, String yeniUserName) {}
-
-  saveUser(User user) {}
+  
 }

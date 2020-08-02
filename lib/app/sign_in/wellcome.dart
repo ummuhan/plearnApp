@@ -1,5 +1,5 @@
-import 'package:englishapp/model/user_model.dart';
-import 'package:englishapp/ui/homepage.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:englishapp/model/user.dart';
 import 'package:englishapp/viewmodel/user_model.dart';
 import 'package:englishapp/widgets/common_widget/social_log_in_button.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,34 +10,35 @@ import 'email_password_login_signin.dart';
 
 class WellcomePage extends StatelessWidget {
   //Bilgi yollamak için callbacklerden faydalanırız.
+  final Firestore _firestore = Firestore.instance;
 
   void _visitorLogin(BuildContext context) async {
     final _userModel = Provider.of<UserModel>(context, listen: false);
     User _user = await _userModel.signInAnonymously();
     if (_user != null)
       print("Oturum açan kullanıcı id" + _user.userID.toString());
+    else {
+      print(" _user Null geldi");
+    } // HomePage(user: _user, onsignOut: null)));
   }
 
   void _googleGiris(BuildContext context) async {
     final _userModel = Provider.of<UserModel>(context, listen: false);
     User _user = await _userModel.signInwithGoogle();
     if (_user != null) {
+      //hayatım
       print("Oturum açan kullanıcı id" + _user.userID.toString());
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (BuildContext context) =>
-                  HomePage(user: _user, onsignOut: null)));
     } else
       print(" _user Null geldi");
   }
 
   void _facebookGiris(BuildContext context) async {
-    final _userModel = Provider.of<UserModel>(context, listen: false);
+    final _userModel = Provider.of<UserModel>(context,
+        listen: false); // debug moddaymışeıfjazjfdjfsbkdfjshkdfjh
     User _user = await _userModel.signInFacebook();
-    if (_user != null)
+    if (_user != null) {
       print("Oturum açan kullanıcı id" + _user.userID.toString());
-    else
+    } else
       print(" _user Null geldi");
   }
 
@@ -50,6 +51,7 @@ class WellcomePage extends StatelessWidget {
     );
   }
 
+//geri dön girişe basmıcaktım
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,10 +75,13 @@ class WellcomePage extends StatelessWidget {
               Text(
                 "WELLCOME PLEARN",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15.0),
               ),
               SizedBox(
-                height: 8,
+                height: 25,
               ),
               SocialLoginButton(
                 butonText: "Gmail ile Giriş Yap",
@@ -100,16 +105,18 @@ class WellcomePage extends StatelessWidget {
                 ),
                 butonText: "Email ve Şifre ile Giriş yap",
               ),
-              SocialLoginButton(
-                onPressed: () => _visitorLogin(context),
-                butonColor: Colors.teal,
-                butonIcon: Icon(Icons.supervised_user_circle),
-                butonText: "Misafir Girişi",
-              ),
+              //   
             ],
           ),
         ),
       ),
+    );
+  }
+
+  veriEkle() {
+    String a = "100";
+    _firestore.collection("Sozluk").document(a).setData(
+      {"kelime": "abo", "anlam": "yerli", "seviye": "1", "kelimeID": a},
     );
   }
 }

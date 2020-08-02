@@ -1,4 +1,4 @@
-import 'package:englishapp/ui/gamespage.dart';
+import 'package:englishapp/app/landing_page.dart';
 import 'package:englishapp/locator.dart';
 import 'package:englishapp/viewmodel/user_model.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  setupLocator();
+  setupLocator(); //get it kısmından gelmektedir.
   return runApp(MyApps());
 } //Projenin çağrıldığı kısım.
 
@@ -15,16 +15,18 @@ class MyApps extends StatelessWidget {
   Widget build(BuildContext context) {
     // bak mesela bunu ekliyorum
     return ChangeNotifierProvider(
-      child: MaterialApp(
+            create: (BuildContext context) => UserModel(),
+          child: MaterialApp(
           title: 'Plearn',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            primarySwatch: Colors.green,
+            primarySwatch: Colors.pink,
             textTheme: Theme.of(context).textTheme.apply(fontFamily: 'yazi'),
           ),
-          home: GamesPage()),
-      create: (BuildContext context) => UserModel(),
-    );
+          home: LandingPage(),
+        )
+        // create: (BuildContext context) => UserModel(),
+        );
   }
   // Widget build(BuildContext context) {
   // return MaterialApp(debugShowCheckedModeBanner: false, home: wellcomePage());

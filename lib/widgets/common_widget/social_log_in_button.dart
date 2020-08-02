@@ -12,7 +12,7 @@ class SocialLoginButton extends StatelessWidget {
   const SocialLoginButton(
       {Key key,
       @required this.butonText,
-      this.butonColor: Colors.orange,
+      this.butonColor: Colors.pinkAccent,
       this.textColor: Colors.white,
       this.radius: 16,
       this.yukseklik: 50,
@@ -65,14 +65,3 @@ class SocialLoginButton extends StatelessWidget {
     );
   }
 }
-//ESKI YONTEM
-/*
-butonIcon != null ? butonIcon : Container(),
-Text(
-butonText,
-style: TextStyle(color: textColor),
-),
-butonIcon != null
-? Opacity(opacity: 0, child: butonIcon)
-: Container(),
-*/

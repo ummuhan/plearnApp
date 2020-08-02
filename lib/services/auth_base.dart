@@ -1,5 +1,7 @@
-import 'package:englishapp/model/user_model.dart';
+import 'package:englishapp/model/user.dart';
 abstract class AuthBase{
+
+  //Firebase veya başka veritabanıyla ilgisi yoktur.
   Future<User> currentUser();//Kullanıcı durumu.
   Future<User> signInAnonymously();//Kullanıcı adı şifre girmeden oturum açan kullanıcı.
   Future<bool> signOut();//Oturum kapatma.
@@ -7,6 +9,6 @@ abstract class AuthBase{
   Future<User> signInFacebook();
   Future<User> signInWithEmailandPassword(String email, String sifre);
   Future<User> createUserWithEmailandPassword(String email, String sifre);
- // Future<User> signInFacebook();*/
+
 }
 //Katmanlar arasında hangisini kullanacağımız işlemini repository kısmında yapacağız.

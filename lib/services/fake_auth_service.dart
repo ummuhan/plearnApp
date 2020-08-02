@@ -1,4 +1,4 @@
-import 'package:englishapp/model/user_model.dart';
+import 'package:englishapp/model/user.dart';
 import 'package:englishapp/services/auth_base.dart';
 
 //Gerçek bir kullanıcı oturum açıyormuş gibi göstermemizi sağlar.Backand kısmı bitmeden kontrol yapmamızı sağlar.
@@ -38,6 +38,7 @@ class FakeAuthenticationService implements AuthBase {
 
   @override
   Future<User> createUserWithEmailandPassword(String email, String sifre) {
+  //Fakei silmiştim iyi de bi dk
     return null;
   }
 
@@ -45,4 +46,6 @@ class FakeAuthenticationService implements AuthBase {
   Future<User> signInWithEmailandPassword(String email, String sifre) {
     return null;
   }
+
+  signInWithFacebook() {}
 }

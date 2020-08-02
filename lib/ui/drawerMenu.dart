@@ -1,49 +1,20 @@
+import 'package:englishapp/ui/mysuccess.dart';
+import 'package:englishapp/ui/sohbetsayfasi/profilepage.dart';
+import 'package:englishapp/viewmodel/user_model.dart';
+import 'package:englishapp/widgets/common_widget/platform_duyarli_alert.dart';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DrawerMenu extends StatefulWidget {
-  @override
-  _DrawerMenuState createState() => _DrawerMenuState();
-}
-
-class _DrawerMenuState extends State<DrawerMenu> {
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(children: <Widget>[
-        UserAccountsDrawerHeader(
-          accountName: Text("ummuhanoksuz"),
-          accountEmail: Text("ummuhanoksuz1@gmail.com"),
-          currentAccountPicture: Image.network(
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR87Qkxf7imN1MTHtRD2LB8DEX-d0r871F6H8BypJg2RF8tqMlY&usqp=CAU"),
-        ),
-        Expanded(
-          child: ListView(
-            children: <Widget>[
-              InkWell(
-                onTap: () {},
-                splashColor: Colors.amber,
-                child: ListTile(
-                  leading: Icon(Icons.account_box),
-                  title: Text("Anasayfa"),
-                ),
-              ),
-            ],
-          ),
-        )
-      ]),
-    );
-  }
-}
-
-/*class DrawerMenu extends StatefulWidget {
-  final AuthBase authServise;
+  //final AuthBase authServise;
   final Function onSignOut;
-  final User user;
+  //final User user;
 
   const DrawerMenu(
       {Key key,
-      @required this.authServise,
-      this.user,
+      // @required this.authServise,
+      //this.user,
       @required this.onSignOut})
       : super(key: key);
 
@@ -69,6 +40,7 @@ class _DrawerMenuState extends State<DrawerMenu>
 
   @override
   Widget build(BuildContext context) {
+    UserModel _userModel = Provider.of<UserModel>(context);
     return Container(
       padding: EdgeInsets.only(top: 20),
       child: Drawer(
@@ -76,81 +48,60 @@ class _DrawerMenuState extends State<DrawerMenu>
           mainAxisAlignment: MainAxisAlignment
               .start, //Yukarıdan aşağıya doğru çalışmasını sağlar.
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(50),
-              //color:Colors.green.shade300,
-              child: Image.asset('images/Plearn.jpeg'),
-            ),
+            Padding(
+                padding: EdgeInsets.all(10),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 75,
+                  backgroundImage: NetworkImage(_userModel.user.profilURL),
+                )),
             Expanded(
                 child: ListView(
               children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.all_inclusive),
-                  title: Text(
-                    "Settings",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  onTap: () {},
-                ),
+                    leading: Image.asset('images/helpicons/018-drawing.png'),
+                    title: Text(
+                      "Your Profile",
+                      style: TextStyle(
+                          fontFamily: 'Quicksand',
+                          fontWeight: FontWeight.normal,
+                          fontSize: 25.0),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    }),
                 Divider(
                   height: 14.0,
                   color: Colors.black,
                 ),
                 ListTile(
-                  leading: Icon(Icons.games),
-                  title: Text(
-                    "Games",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  onTap: () {
-                    GameScreen(hangmanObject: null);
-                  },
-                ),
+                    leading: Image.asset('images/helpicons/040-birthday.png'),
+                    title: Text(
+                      "Your Success",
+                      style: TextStyle(
+                          fontFamily: 'Quicksand',
+                          fontWeight: FontWeight.normal,
+                          fontSize: 25.0),
+                    ),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MySuccess()));
+                    }),
                 Divider(
                   height: 14.0,
                   color: Colors.black,
                 ),
                 ListTile(
-                  leading: Icon(Icons.gamepad),
-                  title: Text(
-                    "Online Games",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  onTap: () {},
-                ),
-                Divider(
-                  height: 14.0,
-                  color: Colors.black,
-                ),
-                ListTile(
-                  leading: Icon(Icons.chat),
-                  title: Text(
-                    "Live Chat",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  onTap: () {},
-                ),
-                Divider(
-                  height: 14.0,
-                  color: Colors.black,
-                ),
-                ListTile(
-                  leading: Icon(Icons.favorite),
-                  title: Text(
-                    "Your Success",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  onTap: () {},
-                ),
-                Divider(
-                  height: 14.0,
-                  color: Colors.black,
-                ),
-                ListTile(
-                  leading: Icon(Icons.comment),
+                  leading: Image.asset('images/helpicons/008-idea.png'),
                   title: Text(
                     "Contact us",
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.normal,
+                        fontSize: 25.0),
                   ),
                   onTap: () {},
                 ),
@@ -159,12 +110,15 @@ class _DrawerMenuState extends State<DrawerMenu>
                   color: Colors.black,
                 ),
                 ListTile(
-                  leading: Icon(Icons.cancel),
+                  leading: Image.asset('images/helpicons/034-devil.png'),
                   title: Text(
                     "Exit",
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.normal,
+                        fontSize: 25.0),
                   ),
-                  onTap: () {},
+                  onTap: () => _cikisIcinOnayIste(context),
                 ),
               ],
             )),
@@ -173,5 +127,24 @@ class _DrawerMenuState extends State<DrawerMenu>
       ),
     );
   }
+
+  Future<bool> _cikisyap(BuildContext context) async {
+    final _userModel = Provider.of<UserModel>(context, listen: false);
+    bool sonuc = await _userModel.signOut();
+
+    return sonuc;
+  }
+
+  Future _cikisIcinOnayIste(BuildContext context) async {
+    final sonuc = await PlatformDuyarliAlertDialog(
+      baslik: 'Emin miziniz?',
+      icerik: 'Çıkış yapmak istediğinizden emin misiniz?',
+      anaButonYazisi: 'Evet',
+      iptalButonYazisi: 'Vazgeç',
+      textColor: Colors.white,
+    ).goster(context);
+    if (sonuc == true) {
+      _cikisyap(context);
+    }
+  }
 }
-*/
