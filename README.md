@@ -11,17 +11,40 @@ Kullanıcıların ingilizce öğrenmesi için birçok oyun ve dikkat çekici tas
 ![Proje Logosu](https://github.com/ummuhan/plearnApp/blob/master/images/Plearn.jpeg)
 ## Proje Üzerinde Yapılan Çalışmalar
 
--  *Projem içerisinde firebase veritabanından yaralanılmıştır. Kullanıcı girişleri firebase ile hazırlanmıştır. Aynı zamanda gmail ,facebook ve kullanıcı kayıt ile oluşturduğu email hesabı ile kayıt yapabilmektedir.*
+-  *Projem içerisinde firebase veritabanından yaralanılmıştır. Kullanıcı girişleri firebase ile hazırlanmıştır. Aynı zamanda gmail ,facebook ve kullanıcı kayıt ile oluşturduğu email hesabı ile kayıt yapabilmektedir. Giriş işlemlerinin ardından anasayfa ile istenilen oyunun seçilmesi beklenir.*
+<p >
+  <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/2.jpeg" width="200" alt="accessibility text">
+  <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/WhatsApp Video 2020-08-31 at 18.38.53.gif" width="200" alt="accessibility text">
 
-![Kullanıcı Girişi](https://github.com/ummuhan/plearnApp/blob/master/images/ss/WhatsApp%20Image%202020-08-31%20at%2018.38.49.jpeg)
-- *Projem içerisinde kullanıcı profil sayfası bulunmaktadır. Ve kullanıcı profil sayfası üzerinde düzenleme vb işlemler yapabilmektedir.*
+</p>
+
+- *Projem içerisinde drawer yapısı bulunmaktadır bu yapı sayesinde profil sayfası ,başarılar sayfası gibi alanların kulanımı ve çıkış alanları oluşturulmuştur.Kullanıcı sayfası içerisinde kullanıcı profil resmini güncelleyip farklı işlemler ile sayfasını kisiselleştirebilmektedir.*
+<p >
+  <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/6.jpeg" width="200" alt="accessibility text">
+  <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/WhatsApp Image 2020-08-31 at 18.38.51.jpeg" width="200" alt="accessibility text">
+  <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/14.jpeg" width="200" alt="accessibility text">
+</p>
+
+
+- *Projem içerisinde chat kısmı ile kullanıcılar arsında mesajlaşma işlemi sağlanılabilmektedir.*
+- *Proje içerisinde farklı eşleştirme oyunları ile ingilizcenin dah kolay öğrenilmesi sağlanılmıştır.*
+- *Proje de katmanlı mimari ve firebase içerisindekicloud firestore , firebase storage gibi alanlar kullanılmıştır..*
+<p>
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/3.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/4.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/7.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/8.jpeg" width="200" alt="accessibility text">
+</p>
+<p>
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/9.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/10.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/11.jpeg" width="200" alt="accessibility text">
+ <img src="https://github.com/ummuhan/plearnApp/blob/master/images/ss/12.jpeg" width="200" alt="accessibility text">
+</p>
 
 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)](https://drive.google.com/drive/my-drive)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
 # plearnApp
