@@ -12,6 +12,8 @@ Kullanıcıların ingilizce öğrenmesi için birçok oyun ve dikkat çekici tas
 ## Proje Üzerinde Yapılan Çalışmalar
 
 -  *Projem içerisinde firebase veritabanından yaralanılmıştır. Kullanıcı girişleri firebase ile hazırlanmıştır. Aynı zamanda gmail ,facebook ve kullanıcı kayıt ile oluşturduğu email hesabı ile kayıt yapabilmektedir.*
+
+![Kullanıcı Girişi](https://github.com/ummuhan/plearnApp/blob/master/images/ss/WhatsApp%20Image%202020-08-31%20at%2018.38.49.jpeg)
 - *Projem içerisinde kullanıcı profil sayfası bulunmaktadır. Ve kullanıcı profil sayfası üzerinde düzenleme vb işlemler yapabilmektedir.*
 
 
