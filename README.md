@@ -1,15 +1,17 @@
 # englishapp
 
-A new Flutter project.
+![Flutter image](https://assets.website-files.com/5e3c45dea042cf97f3689681/5e417cd336a72b06a86c73e7_Flutter-Tutorial-Header%402x.jpg)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Proje Amacı
+
+Bu proje ilk kapsamlı flutter projemdir.Aynı zamanda bitirme projem olmaktadır. Projenin amacı kullanıcıların kolayca ilgilizce öğrenmesini sağlamaktır.
+Kullanıcıların ingilizce öğrenmesi için birçok oyun ve dikkat çekici tasarımlardan yararlanılmıştır. 
+![Ekran Görüntüsü](https://drive.google.com/drive/my-drive)
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)](https://drive.google.com/drive/my-drive)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
